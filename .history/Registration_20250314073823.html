@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Registration</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .error {
+            color: red;
+            font-size: 0.8em;
+        }
+
+        .invalid {
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="hospital-logo.png" alt="Hospital Logo">
+        </div>
+        <div class="hospital-name">
+            [Hospital Name]
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="registration.html">Registration</a></li>
+                <li><a href="records.html">Records</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contacts</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <h1>Patient Registration</h1>
+        <form id="registrationForm" action="registration.php" method="post">
+            <label for="patientId">Patient ID:</label><br>
+            <input type="text" id="patientId" name="patientId"><span class="error" id="patientIdError"></span><br><br>
+
+            <label for="firstName">First Name:</label><br>
+            <input type="text" id="firstName" name="firstName"><span class="error" id="firstNameError"></span><br><br>
+
+            <label for="middleName">Middle Name:</label><br>
+            <input type="text" id="middleName" name="middleName"><span class="error" id="middleNameError"></span><br><br>
+
+            <label for="surname">Surname:</label><br>
+            <input type="text" id="surname" name="surname"><span class="error" id="surnameError"></span><br><br>
+
+            <label for="dateOfBirth">Date of Birth:</label><br>
+            <input type="date" id="dateOfBirth" name="dateOfBirth"><span class="error" id="dateOfBirthError"></span><br><br>
+
+            <label for="gender">Gender:</label><br>
+            <select id="gender" name="gender">
+                <option value="">Select Gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Bi-sexual">Bi-sexual</option>
+            </select><span class="error" id="genderError"></span><br><br>
+
+            <label for="county">County:</label><br>
+            <select id="county" name="county">
+                <option value="">Select County</option>
+                <option value="Mombasa">Mombasa</option>
+                <option value="Kwale">Kwale</option>
+                <option value="Kilifi">Kilifi</option>
+                <option value="Tana River">Tana River</option>
+                <option value="Lamu">Lamu</option>
+                <option value="Taita-Taveta">Taita-Taveta</option>
+                 <option value="Garissa">Garissa</option>
+                <option value="Wajir">Wajir</option>
+                <option value="Mandera">Mandera</option>
+                 <option value="Marsabit">Marsabit</option>
+                <option value="Isiolo">Isiolo</option>
+                <option value="Meru">Meru</option>
+                <option value="Tharaka-Nithi">Tharaka-Nithi</option>
+                <option value="Embu">Embu</option>
+                <option value="Kitui">Kitui</option>
+                <option value="Machakos">Machakos</option>
+                <option value="Makueni">Makueni</option>
+                <option value="Nyandarua">Nyandarua</option>
+                <option value="Nyeri">Nyeri</option>
+                <option value="Kirinyaga">Kirinyaga</option>
+                <option value="Muranga">Muranga</option>
+                <option value="Kiambu">Kiambu</option>
+                <option value="Turkana">Turkana</option>
+                <option value="West Pokot">West Pokot</option>
+                <option value="Samburu">Samburu</option>
+                <option value="Trans-Nzoia">Trans-Nzoia</option>
+                <option value="Uasin Gishu">Uasin Gishu</option>
+                <option value="Elgeyo-Marakwet">Elgeyo-Marakwet</option>
+                <option value="Nandi">Nandi</option>
+                <option value="Baringo">Baringo</option>
+                <option value="Laikipia">Laikipia</option>
+                <option value="Nakuru">Nakuru</option>
+                <option value="Narok">Narok</option>
+                <option value="Kajiado">Kajiado</option>
+                <option value="Kericho">Kericho</option>
+                <option value="Bomet">Bomet</option>
+                <option value="Kakamega">Kakamega</option>
+                <option value="Vihiga">Vihiga</option>
+                <option value="Bungoma">Bungoma</option>
+                <option value="Busia">Busia</option>
+                <option value="Siaya">Siaya</option>
+                <option value="Kisumu">Kisumu</option>
+                <option value="Homa Bay">Homa Bay</option>
+                <option value="Migori">Migori</option>
+                <option value="Kisii">Kisii</option>
+                <option value="Nyamira">Nyamira</option>
+                <option value="Nairobi">Nairobi</option>
+            </select><span class="error" id="countyError"></span><br><br>
+
+            <label for="notes">Notes:</label><br>
+            <textarea id="notes" name="notes" rows="4" cols="50"></textarea><span class="error" id="notesError"></span><br><br>
+
+            <h2>Next of Kin</h2>
+
+            <label for="nokFirstName">First Name:</label><br>
+            <input type="text" id="nokFirstName" name="nokFirstName"><span class="error" id="nokFirstNameError"></span><br><br>
+
+            <label for="nokSurname">Surname:</label><br>
+            <input type="text" id="nokSurname" name="nokSurname"><span class="error" id="nokSurnameError"></span><br><br>
+
+            <label for="nokRelationship">Relationship:</label><br>
+            <input type="text" id="nokRelationship" name="nokRelationship"><span class="error" id="nokRelationshipError"></span><br><br>
+
+            <button type="submit">Register Patient</button>
+            <button type="button" id="clearForm">Clear</button>
+        </form>
+    </section>
+
+    <script src="script.js"></script>
+    <script>
+        //JavaScript for form validation and clearing
+        const form = document.getElementById('registrationForm');
+        const clearFormButton = document.getElementById('clearForm');
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            let isValid = validateForm();
+
+            if (isValid) {
+                //  Submit the form data using POST method
+                form.submit();
+            }
+        });
+
+        clearFormButton.addEventListener('click', function() {
+            form.reset();
+            resetErrorMessages();
+        });
+
+        function validateForm() {
+            let isValid = true;
+
+            isValid &= validateField('patientId', 'Patient ID is required');
+            isValid &= validateField('firstName', 'First Name is required');
+            isValid &= validateField('surname', 'Surname is required');
+            isValid &= validateField('dateOfBirth', 'Date of Birth is required');
+            isValid &= validateDropdown('gender', 'Gender is required');
+            isValid &= validateDropdown('county', 'County is required');
+            isValid &= validateField('nokFirstName', 'Next of Kin First Name is required');
+            isValid &= validateField('nokSurname', 'Next of Kin Surname is required');
+            isValid &= validateField('nokRelationship', 'Next of Kin Relationship is required');
+
+            return isValid;
+        }
+
+        function validateField(fieldId, errorMessage) {
+            const field = document.getElementById(fieldId);
+            const errorSpan = document.getElementById(fieldId + 'Error');
+
+            if (field.value.trim() === '') {
+                field.classList.add('invalid');
+                errorSpan.textContent = errorMessage;
+                return false;
+            } else {
+                field.classList.remove('invalid');
+                errorSpan.textContent = '';
+                return true;
+            }
+        }
+
+        function validateDropdown(fieldId, errorMessage) {
+            const dropdown = document.getElementById(fieldId);
+            const errorSpan = document.getElementById(fieldId + 'Error');
+
+            if (dropdown.value === '') {
+                dropdown.classList.add('invalid');
+                errorSpan.textContent = errorMessage;
+                return false;
+            } else {
+                dropdown.classList.remove('invalid');
+                errorSpan.textContent = '';
+                return true;
+            }
+        }
+
+        function resetErrorMessages() {
+            const errorMessages = document.querySelectorAll('.error');
+            errorMessages.forEach(message => {
+                message.textContent = '';
+            });
+
+            const invalidFields = document.querySelectorAll('.invalid');
+            invalidFields.forEach(field => {
+                field.classList.remove('invalid');
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+.header {
+    padding: 2rem;
+}
+
+.logo {
+    object-fit: cover;
+    width: 0px;
+    height: 200px;
+
+}

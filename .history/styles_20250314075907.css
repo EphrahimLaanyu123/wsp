@@ -1,0 +1,139 @@
+
+
+.header {
+    padding: 2rem;
+    background-color: aqua;
+    display: flex;
+    gap: 40rem;
+}
+
+.logo {
+    width: 70px;
+    height: 90px;
+}
+
+.nav {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    padding: 2rem;
+    background-color: bisque;
+}
+
+
+.sectionaside {
+    display: flex;
+    justify-content: space-between;
+}
+
+.section {
+    background-color: azure;
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    text-align: center;
+}
+
+.aside {
+    background-color: blanchedalmond;
+    width: 50%;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* General Form Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.form-container {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
+}
+
+/* Headings */
+h1, h2 {
+    text-align: center;
+    color: #333;
+}
+
+/* Form Group */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+/* Input & Select */
+input, select, textarea {
+    width: 200px; /* Smaller width */
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+textarea {
+    resize: none;
+}
+
+/* Error Messages */
+.input-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.error {
+    color: red;
+    font-size: 12px;
+    margin-left: 10px;
+    white-space: nowrap; /* Keeps error message in one line */
+}
+
+/* Buttons */
+.button-group {
+    text-align: center;
+}
+
+button {
+    background: #007bff;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+button#clearForm {
+    background: #dc3545;
+}
+
+button#clearForm:hover {
+    background: #a71d2a;
+}

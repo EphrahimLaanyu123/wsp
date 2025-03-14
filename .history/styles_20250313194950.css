@@ -1,0 +1,11 @@
+.header {
+    padding: 2rem;
+    background-color: aqua;
+    display: flex;
+    gap: 20rem;
+}
+
+.logo {
+    width: 70px;
+    height: 90px;
+}

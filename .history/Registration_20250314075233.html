@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Registration</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <section>
+        <h1>Patient Registration</h1>
+        <form id="registrationForm" action="registration.php" method="post">
+            <label for="patientId">Patient ID:</label>
+            <input type="text" id="patientId" name="patientId" required>
+            <span class="error" id="patientIdError"></span>
+            
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" name="firstName" required>
+            <span class="error" id="firstNameError"></span>
+            
+            <label for="surname">Surname:</label>
+            <input type="text" id="surname" name="surname" required>
+            <span class="error" id="surnameError"></span>
+            
+            <label for="dateOfBirth">Date of Birth:</label>
+            <input type="date" id="dateOfBirth" name="dateOfBirth" required>
+            <span class="error" id="dateOfBirthError"></span>
+            
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" required>
+                <option value="">Select Gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+            </select>
+            <span class="error" id="genderError"></span>
+            
+            <label for="county">County:</label>
+            <select id="county" name="county" required>
+                <option value="">Select County</option>
+                <option value="Nairobi">Nairobi</option>
+                <option value="Mombasa">Mombasa</option>
+                <option value="Kisumu">Kisumu</option>
+            </select>
+            <span class="error" id="countyError"></span>
+            
+            <label for="notes">Notes:</label>
+            <textarea id="notes" name="notes" rows="4" cols="50"></textarea>
+            <span class="error" id="notesError"></span>
+            
+            <h2>Next of Kin</h2>
+            <label for="nokFirstName">First Name:</label>
+            <input type="text" id="nokFirstName" name="nokFirstName" required>
+            <span class="error" id="nokFirstNameError"></span>
+            
+            <label for="nokSurname">Surname:</label>
+            <input type="text" id="nokSurname" name="nokSurname" required>
+            <span class="error" id="nokSurnameError"></span>
+            
+            <label for="nokRelationship">Relationship:</label>
+            <input type="text" id="nokRelationship" name="nokRelationship" required>
+            <span class="error" id="nokRelationshipError"></span>
+            
+            <button type="submit">Register Patient</button>
+            <button type="button" id="clearForm">Clear</button>
+        </form>
+    </section>
+
+    <script src="script.js"></script>
+    <script>
+        const form = document.getElementById('registrationForm');
+        const clearFormButton = document.getElementById('clearForm');
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            let isValid = validateForm();
+            if (isValid) {
+                form.submit();
+            }
+        });
+
+        clearFormButton.addEventListener('click', function() {
+            form.reset();
+            document.querySelectorAll('.error').forEach(error => error.textContent = '');
+        });
+
+        function validateForm() {
+            let isValid = true;
+            isValid &= validateField('patientId', 'Patient ID is required');
+            isValid &= validateField('firstName', 'First Name is required');
+            isValid &= validateField('surname', 'Surname is required');
+            isValid &= validateField('dateOfBirth', 'Date of Birth is required');
+            isValid &= validateDropdown('gender', 'Gender is required');
+            isValid &= validateDropdown('county', 'County is required');
+            isValid &= validateField('nokFirstName', 'Next of Kin First Name is required');
+            isValid &= validateField('nokSurname', 'Next of Kin Surname is required');
+            isValid &= validateField('nokRelationship', 'Next of Kin Relationship is required');
+            return isValid;
+        }
+
+        function validateField(fieldId, errorMessage) {
+            const field = document.getElementById(fieldId);
+            const errorSpan = document.getElementById(fieldId + 'Error');
+            if (field.value.trim() === '') {
+                field.classList.add('invalid');
+                errorSpan.textContent = errorMessage;
+                return false;
+            } else {
+                field.classList.remove('invalid');
+                errorSpan.textContent = '';
+                return true;
+            }
+        }
+
+        function validateDropdown(fieldId, errorMessage) {
+            const field = document.getElementById(fieldId);
+            const errorSpan = document.getElementById(fieldId + 'Error');
+            if (field.value === '') {
+                field.classList.add('invalid');
+                errorSpan.textContent = errorMessage;
+                return false;
+            } else {
+                field.classList.remove('invalid');
+                errorSpan.textContent = '';
+                return true;
+            }
+        }
+    </script>
+</body>
+</html>

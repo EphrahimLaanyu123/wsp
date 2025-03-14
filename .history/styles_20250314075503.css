@@ -1,0 +1,137 @@
+
+
+.header {
+    padding: 2rem;
+    background-color: aqua;
+    display: flex;
+    gap: 40rem;
+}
+
+.logo {
+    width: 70px;
+    height: 90px;
+}
+
+.nav {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    padding: 2rem;
+    background-color: bisque;
+}
+
+
+.sectionaside {
+    display: flex;
+    justify-content: space-between;
+}
+
+.section {
+    background-color: azure;
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    text-align: center;
+}
+
+.aside {
+    background-color: blanchedalmond;
+    width: 50%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.error {
+    color: red;
+    font-size: 0.8em;
+}
+
+.invalid {
+    border: 1px solid red;
+}
+#registrationForm {
+    display: flex;
+    flex-direction: column;
+}
+
+body {
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+section {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    width: 50px;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+input.invalid, select.invalid {
+    border-color: red;
+}
+
+.error {
+    color: red;
+    font-size: 12px;
+    margin-top: 2px;
+}
+
+button {
+    margin-top: 15px;
+    padding: 10px;
+    border: none;
+    background: #007bff;
+    color: white;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+button#clearForm {
+    background: #dc3545;
+}
+
+button#clearForm:hover {
+    background: #b52b3a;
+}

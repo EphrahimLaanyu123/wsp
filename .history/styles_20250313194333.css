@@ -1,0 +1,9 @@
+.header {
+    padding: 4rem;
+}
+
+.logo {
+    object-fit: cover;
+    width: 200px;
+
+}

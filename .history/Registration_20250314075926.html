@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Registration</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <section class="form-container">
+        <h1>Patient Registration</h1>
+        <form id="registrationForm" action="registration.php" method="post" novalidate>
+            
+            <!-- Patient ID -->
+            <div class="form-group">
+                <label for="patientId">Patient ID:</label>
+                <div class="input-container">
+                    <input type="text" id="patientId" name="patientId" required>
+                    <span class="error" id="patientIdError"></span>
+                </div>
+            </div>
+
+            <!-- First Name -->
+            <div class="form-group">
+                <label for="firstName">First Name:</label>
+                <div class="input-container">
+                    <input type="text" id="firstName" name="firstName" required>
+                    <span class="error" id="firstNameError"></span>
+                </div>
+            </div>
+
+            <!-- Surname -->
+            <div class="form-group">
+                <label for="surname">Surname:</label>
+                <div class="input-container">
+                    <input type="text" id="surname" name="surname" required>
+                    <span class="error" id="surnameError"></span>
+                </div>
+            </div>
+
+            <!-- Date of Birth -->
+            <div class="form-group">
+                <label for="dateOfBirth">Date of Birth:</label>
+                <div class="input-container">
+                    <input type="date" id="dateOfBirth" name="dateOfBirth" required>
+                    <span class="error" id="dateOfBirthError"></span>
+                </div>
+            </div>
+
+            <!-- Gender -->
+            <div class="form-group">
+                <label for="gender">Gender:</label>
+                <div class="input-container">
+                    <select id="gender" name="gender" required>
+                        <option value="">Select Gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                    </select>
+                    <span class="error" id="genderError"></span>
+                </div>
+            </div>
+
+            <!-- County -->
+            <div class="form-group">
+                <label for="county">County:</label>
+                <div class="input-container">
+                    <select id="county" name="county" required>
+                        <option value="">Select County</option>
+                        <option value="Nairobi">Nairobi</option>
+                        <option value="Mombasa">Mombasa</option>
+                        <option value="Kisumu">Kisumu</option>
+                    </select>
+                    <span class="error" id="countyError"></span>
+                </div>
+            </div>
+
+            <!-- Notes -->
+            <div class="form-group">
+                <label for="notes">Notes:</label>
+                <div class="input-container">
+                    <textarea id="notes" name="notes" rows="4"></textarea>
+                    <span class="error" id="notesError"></span>
+                </div>
+            </div>
+
+            <h2>Next of Kin</h2>
+
+            <!-- NOK First Name -->
+            <div class="form-group">
+                <label for="nokFirstName">First Name:</label>
+                <div class="input-container">
+                    <input type="text" id="nokFirstName" name="nokFirstName" required>
+                    <span class="error" id="nokFirstNameError"></span>
+                </div>
+            </div>
+
+            <!-- NOK Surname -->
+            <div class="form-group">
+                <label for="nokSurname">Surname:</label>
+                <div class="input-container">
+                    <input type="text" id="nokSurname" name="nokSurname" required>
+                    <span class="error" id="nokSurnameError"></span>
+                </div>
+            </div>
+
+            <!-- NOK Relationship -->
+            <div class="form-group">
+                <label for="nokRelationship">Relationship:</label>
+                <div class="input-container">
+                    <input type="text" id="nokRelationship" name="nokRelationship" required>
+                    <span class="error" id="nokRelationshipError"></span>
+                </div>
+            </div>
+
+            <div class="button-group">
+                <button type="submit">Register Patient</button>
+                <button type="button" id="clearForm">Clear</button>
+            </div>
+
+        </form>
+    </section>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

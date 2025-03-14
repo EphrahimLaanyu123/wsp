@@ -1,0 +1,33 @@
+
+
+.header {
+    padding: 2rem;
+    background-color: aqua;
+    display: flex;
+    gap: 40rem;
+}
+
+.logo {
+    width: 70px;
+    height: 90px;
+}
+
+.nav {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    padding: 2rem;
+    background-color: bisque;
+}
+
+.section {
+    background-color: azure;
+}
+
+.aside {
+    background-color: blanchedalmond;
+}
+
+.sectionaside {
+    display: ;
+}
