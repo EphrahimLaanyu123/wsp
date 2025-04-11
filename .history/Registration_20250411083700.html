@@ -7,12 +7,12 @@
     <link rel="stylesheet" href="registration.css">
 </head>
 <body>
+    
     <section>
         <h1>Patient Registration</h1>
         <form id="registrationForm" action="registration.php" method="post" novalidate>
-            <!-- Patient Information Section -->
             <label for="patientId">Patient ID:</label>
-            <input type="text" id="patientId" name="patientId" required>            
+            <input type="text" id="patientId" name="patientId" required>
             <span class="error" id="patientIdError"></span>
             
             <label for="firstName">First Name:</label>
@@ -87,12 +87,12 @@
                 <option value="Wajir">Wajir</option>
                 <option value="West Pokot">West Pokot</option>
             </select>
+            
             <span class="error" id="countyError"></span>
-
             <button type="submit">Register Patient</button>
             <button type="button" id="clearForm">Clear</button>
             
-            <!-- Next of Kin Section -->
+            
             <h2>Next of Kin</h2>
             <label for="nokFirstName">First Name:</label>
             <input type="text" id="nokFirstName" name="nokFirstName" required>
@@ -105,9 +105,9 @@
             <label for="nokRelationship">Relationship:</label>
             <input type="text" id="nokRelationship" name="nokRelationship" required>
             <span class="error" id="nokRelationshipError"></span>
-
-            <!-- Register Next of Kin Button -->
-            <button type="button" id="registerNextOfKin">Register Next of Kin</button>
+            
+            <button type="submit">Register Patient</button>
+            <button type="button" id="clearForm">Clear</button>
         </form>
     </section>
 
@@ -115,7 +115,6 @@
     <script>
         const form = document.getElementById('registrationForm');
         const clearFormButton = document.getElementById('clearForm');
-        const registerNextOfKinButton = document.getElementById('registerNextOfKin');
 
         form.addEventListener('submit', function(event) {
             event.preventDefault();
@@ -128,14 +127,6 @@
         clearFormButton.addEventListener('click', function() {
             form.reset();
             document.querySelectorAll('.error').forEach(error => error.textContent = '');
-        });
-
-        registerNextOfKinButton.addEventListener('click', function() {
-            let isValid = validateNextOfKin();
-            if (isValid) {
-                alert('Next of Kin registered successfully!');
-                // You can process the data further here (e.g., send it to the server).
-            }
         });
 
         function validateForm() {
@@ -178,14 +169,6 @@
                 errorSpan.textContent = '';
                 return true;
             }
-        }
-
-        function validateNextOfKin() {
-            let isValid = true;
-            isValid &= validateField('nokFirstName', 'Next of Kin First Name is required');
-            isValid &= validateField('nokSurname', 'Next of Kin Surname is required');
-            isValid &= validateField('nokRelationship', 'Next of Kin Relationship is required');
-            return isValid;
         }
     </script>
 </body>
